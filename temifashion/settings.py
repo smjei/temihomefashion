@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-uipd$j(tq$x5^*dls*4$g_ih*v$#ltc6yj0_mpn$bcvj4&n*o0
 
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = ['127.0.0.1','temihomefashion.onrender.com', ''www.fashionablesbytemi.online', 'fashionablesbytemi.online']
+ALLOWED_HOSTS = ['127.0.0.1','temihomefashion.onrender.com', 'www.fashionablesbytemi.online', 'fashionablesbytemi.online']
 
 
 # Application definition
