@@ -19,22 +19,3 @@ def index(request):
 
 def sam404(request):
    return render(request, 'temihomefashion/e404.html')
-
-
-class ContactView(FormView):
-    template_name = 'temihomefashion/contact.html'
-    form_class = ContactForm
-    success_url = reverse_lazy('contact:success')
-
-    def form_valid(self, form):
-        # Calls the custom send method
-        form.send()
-        return super().form_valid(form)
-    
-
-class ContactSuccessView(TemplateView):
-    template_name = 'temihomefashion/success.html'
-
-# Create your views here.
-
-
