@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-uipd$j(tq$x5^*dls*4$g_ih*v$#ltc6yj0_mpn$bcvj4&n*o0
 
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = ['127.0.0.1','adomeh-portfolio.onrender.com', 'www.adotech.pl', 'adotech.pl']
+ALLOWED_HOSTS = ['127.0.0.1','temihomefashion.onrender.com']
 
 
 # Application definition
@@ -151,8 +151,9 @@ DATABASES['default'].update(db_from_env)
 
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIT_PORT = 587
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER='eledoyaa@gmail.com'
+EMAIL_HOST_PASSWORD='thjaetffgzvleiua'
+RECIPIENT_ADDRESS='eledoyaa@gmail.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
