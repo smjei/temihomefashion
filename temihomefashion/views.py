@@ -21,28 +21,20 @@ def sam404(request):
    return render(request, 'temihomefashion/e404.html')
 
 
-class SendFormEmail(View):
+class ContactView(FormView):
+    template_name = 'temihomefashion/contact.html'
+    form_class = ContactForm
+    success_url = reverse_lazy('contact:success')
 
-    def  get(self, request):
+    def form_valid(self, form):
+        # Calls the custom send method
+        form.send()
+        return super().form_valid(form)
+    
 
-        # Get the form data 
-        name = request.GET.get('name', None)
-        email = request.GET.get('email', None)
-        message = request.GET.get('message', None)
+class ContactSuccessView(TemplateView):
+    template_name = 'temihomefashion/success.html'
 
-        send_mail(
-            'Subject - New Contact Me Message From Your Website', 
-            'Hello ' + name + ',\n' + message, 
-            'samueladomeh@gmail.com', # Admin
-            [
-                email,
-            ]
-        )
-
-        # Redirect to same page after form submit
-        messages.success(request, ('Email sent successfully.'))
-        return redirect('index')
-
-
+# Create your views here.
 
 
